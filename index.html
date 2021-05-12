@@ -1,0 +1,44 @@
+    <head>
+        <title>AngajatIT</title>
+    </head>
+    <body>
+        <div>
+            <span>Name:</span>
+            <span style="" id="name"></span>
+        </div>
+        <div>
+            <span>Gender:</span>
+            <span id="gender"></span>
+        </div>
+        <div>
+            <span>E-mail:</span>
+            <span id="e-mail" ></span>
+        </div>
+        <div>
+            <span>Age:</span>
+            <span id="age"></span>
+        </div>
+        <div>
+            <span>Picture:</span>
+            <img src="" id="picture"/>
+            
+        </div>
+        <button id="genereaza">Genereaza utilizator</button>
+
+<script>
+document.getElementById("genereaza").addEventListener("click",function(){
+    console.log("genereaza")
+    fetch("https://randomuser.me/api/").then(function(raspuns){ return raspuns.json()}).then(function(data){
+        const utilizator = data.results[0]
+        console.log(utilizator)
+        document.getElementById("name").innerText = utilizator.name.title + ' ' + utilizator.name.first + ' ' + utilizator.name.last
+        document.getElementById("gender").innerText = utilizator.gender
+        document.getElementById("e-mail").innerText = utilizator.email
+        document.getElementById("age").innerText = utilizator.dob.age
+        document.getElementById("picture").src = utilizator.picture.medium
+    })
+
+})
+</script>
+    </body>
+</html>
