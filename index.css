@@ -1,0 +1,19 @@
+#incarcare {
+    width: 500px;
+}
+.progress-bar {
+    min-height: 100px;
+    background-color: pink;
+    margin: 1px;
+    border-style: dotted;
+    border-color: seagreen;
+    border-width: 2px;
+    border-radius: 10px;
+}
+.progress-line {
+    height: 100%;
+    min-height: 100px;
+    background-color: rgb(0, 255, 115);
+    width: 0%;
+    transition: width 1s ease-in-out;
+}
