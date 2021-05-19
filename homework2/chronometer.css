@@ -1,0 +1,22 @@
+.chronometer-container{
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+.chronometer-container table{
+    border: 1px;
+    font-size: xx-large; 
+    width: 40%;
+}
+.chronometer-container table td{
+    width: 20%;
+}
+.chronometer-actions{
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    margin-top: 66px;
+}
+.chronometer-actions button{
+    margin: 5px;
+}

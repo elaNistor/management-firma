@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>chronometru</title>
+    <link rel="stylesheet" href="chronometer.css"/>
+    
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+<div class="chronometer-container">
+    <table>
+        <tr>
+            <td>Hour</td>
+            <td></td>
+            <td>Minutes</td>
+            <td></td>
+            <td>Seconds</td>
+        </tr> 
+        <tr>
+            <td id="hours">00</td>
+            <td>:</td>
+            <td id="minutes">00</td>
+            <td>:</td>
+            <td id="seconds">00</td>
+        </tr>
+
+    </table>
+    
+</div>
+<div class="chronometer-actions">
+    <button onclick="play()">play</button>
+    <button onclick="stop()">stop</button>
+    <button onclick="reset()">reset</button>
+</div>
+</body>
