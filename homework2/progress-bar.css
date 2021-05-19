@@ -17,3 +17,8 @@
     width: 0%;
     transition: width 1s ease-in-out;
 }
+@media screen and (prefers-reduced-motion) {
+    .progress-line {
+        animation: none;
+    }
+ }
