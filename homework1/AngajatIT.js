@@ -7,11 +7,16 @@ class AngajatIT  {
         this.departament=departament
     }
     afiseazaVarsta() {
-        console.log("Neimplementat ")
+        const acuma = new Date();
+        const anulCurent = acuma.getFullYear()
+        const anulNasteri = `${this.CNP}`.substr(1,2)
+        console.log(`Varsta ${anulCurent - 1900 - anulNasteri}`)
     }
     
     afișeazăAnulAngajarii() {
-        console.log("Neimplementat")
+        const acuma = new Date();
+        const anulCurent = acuma.getFullYear()
+        console.log(`Anul angajari ${anulCurent - this.vechime}`)
     }
 
 
@@ -20,24 +25,30 @@ class AngajatIT  {
     }
 }
 
-const mihaela=new AngajatIT(123456,"Nistor","Mihaela",3,"IT")
+const mihaela=new AngajatIT(180456,"Nistor","Mihaela",3,"IT")
 mihaela.afiseazaVarsta()
 
 
 class QA extends AngajatIT{
-    testeazăSoftware(){
+    constructor(){
+        super()
+    }
+    lucrează(){
         console.log("testează software")
     }
 }
 
 const stefan=new QA(1980,"Stefan","Stefan",2,"QA")
-stefan.testeazăSoftware()
+stefan.lucrează()
 
 
 class Developer extends AngajatIT{
-    scriecod(){
-        console.log("scrie cod bun")
+    constructor(){
+        super()
+    }
+    lucrează(){
+        console.log("scrie cod")
     }
 }
 const sorin=new Developer( 248091, "Neculae","Sorin",7, "Web")
-sorin.scriecod()
+sorin.lucrează()
