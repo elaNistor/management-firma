@@ -1,0 +1,36 @@
+#container {
+    border: 1px solid red;
+    width: 375px;
+}
+.cifre-container {
+    width: 160px;
+    display: inline-block;
+}
+.operatii-container {
+    display: inline-block;
+    width: 85px;
+}
+.actiuni-container {
+    display: inline-block;
+    width: 85px;
+}
+.cell {
+    display: inline-block;
+    padding: 28px;
+    margin: 2px;
+    border: 2px solid darkred;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 30px;
+    width: 16px;
+    text-align: center;
+}
+.actiuni-container .actiune {
+    width: 65px;
+}
+
+.display {
+    font-size: 30px;
+    height: 60px;
+    display: block;
+}
