@@ -1,14 +1,15 @@
 class Calculator {
-    constructor(selector) {
-        this.selector = selector;
-        this.valoareCurenta = 0;
-        this.container = document.getElementById(this.selector);
+    constructor(id) {
+        this.valoareCurenta = '0';
+        this.container = document.getElementById(id);
         this.cifreContainer = null;
         this.display = null;
+
+        this.valoareAnterioara = null;
+        this.operatieAnterioara = null;
     }
 
     draw() {
-
         this.display = document.createElement('input');
         this.display.classList.add('display')
         this.display.value = this.valoareCurenta;
@@ -22,6 +23,11 @@ class Calculator {
         this.cifreContainer.classList.add('cifre-container');
         this.principalContainer.appendChild(this.cifreContainer);
 
+        this.cifreContainer.addEventListener('click', event =>{
+            const cifra = event.target.innerText;
+            this.valoareCurenta = this.valoareCurenta === '0' ? cifra : `${this.valoareCurenta}${cifra}`;
+            this.display.value = this.valoareCurenta;
+        })
         for(let i = 1; i<=9; i++){
             this.addCifra(i);
         }
@@ -32,62 +38,59 @@ class Calculator {
         this.operatiiContainer.classList.add('operatii-container');
         this.principalContainer.appendChild(this.operatiiContainer);
 
-        const adunare = document.createElement('div');
-        adunare.classList.add('cell')
-        adunare.innerText = '+';
-        this.operatiiContainer.appendChild(adunare);
-
-        const scadere = document.createElement('div');
-        scadere.classList.add('cell')
-        scadere.innerText = '-';
-        this.operatiiContainer.appendChild(scadere);
-
-        const inmultire = document.createElement('div');
-        inmultire.classList.add('cell')
-        inmultire.innerText = '*';
-        this.operatiiContainer.appendChild(inmultire);
-        
-        const impartire = document.createElement('div');
-        impartire.classList.add('cell')
-        impartire.innerText = '/';
-        this.operatiiContainer.appendChild(impartire);
-
-        const egal = document.createElement('div');
-        egal.classList.add('cell')
-        egal.innerText = '=';
-        this.operatiiContainer.appendChild(egal);
-
         this.actiuniContainer = document.createElement('div');
         this.actiuniContainer.classList.add('actiuni-container');
         this.principalContainer.appendChild(this.actiuniContainer);
+     
+        const operatii = ['+', '-', '*', '/', '='];
+        operatii.forEach(semn => this.addOperatie(semn));
+        this.operatiiContainer.addEventListener('click', event =>{
+            const semn = event.target.innerText;
+            if (this.valoareAnterioara) {
+
+            }
+            if ( semn === '=') {
+                this.valoareCurenta = 
+            } else {
+                this.valoareAnterioara = this.valoareCurenta;
+                this.operatieAnterioara = semn;
+            }
+        })
 
         const curata = document.createElement('div');
         curata.classList.add('cell')
         curata.classList.add('actiune')
         curata.innerText = 'C';
         curata.addEventListener('click', () => {
-            this.valoareCurenta = 0;
-            this.display.value = this.valoareCurenta;
+            this.setValoareCurenta('0');
         })
         this.actiuniContainer.appendChild(curata);
         
 
-        const sterge = document.createElement('div');
-        sterge.classList.add('cell')
-        sterge.classList.add('actiune')
-        sterge.innerText = '<=';
-        this.actiuniContainer.appendChild(sterge);
 
     }
+    calculate() {
+        switch(this.operatieAnterioara) {
+            case '+':
+               return (parseFloat(this.valoareCurenta) + parseFloat(this.valoareAnterioara));
+            break;
+        }
+    }
 
+    setValoareCurenta(valoare) {
+        this.valoareCurenta = valoare;
+        this.display.value = this.valoareCurenta;
+    }
+    addOperatie(semn) {
+        const operatie = document.createElement('div');
+        operatie.classList.add('cell')
+        operatie.innerText = semn;
+        this.operatiiContainer.appendChild(operatie);
+    }
     addCifra(index) {
         const cifra = document.createElement('div')
         cifra.classList.add('cell')
         cifra.innerText = index
-        cifra.addEventListener('click', ()=>{
-            this.valoareCurenta = this.valoareCurenta * 10 + index
-            this.display.value = this.valoareCurenta;
-        })
         this.cifreContainer.appendChild(cifra);
     }
 }
