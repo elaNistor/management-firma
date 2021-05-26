@@ -3,13 +3,16 @@
     align-items: center; 
     justify-content: center;
 }
-.chronometer-container table{
+.chronometer-principal{
     border: 1px;
     font-size: xx-large; 
     width: 40%;
 }
-.chronometer-container table td{
-    width: 20%;
+.chronometer-row{
+    width: 500px;
+}
+.chronometer-row div{ 
+    display: inline-block;
 }
 .chronometer-actions{
     display: flex; 

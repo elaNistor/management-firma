@@ -3,33 +3,32 @@
 <head>
     <title>chronometru</title>
     <link rel="stylesheet" href="chronometer.css"/>
-    
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="chronometer.js" defer></script>
 </head>
 <body>
 <div class="chronometer-container">
-    <table>
-        <tr>
-            <td>Hour</td>
-            <td></td>
-            <td>Minutes</td>
-            <td></td>
-            <td>Seconds</td>
-        </tr> 
-        <tr>
-            <td id="hours">00</td>
-            <td>:</td>
-            <td id="minutes">00</td>
-            <td>:</td>
-            <td id="seconds">00</td>
-        </tr>
+    <div class="chronometer-principal">
+        <div class="chronometer-row">
+            <div>Hour</div>
+            <div></div>
+            <div>Minutes</div>
+            <div></div>
+            <div>Seconds</div>
+        </div> 
+        <div class="chronometer-row">
+            <div id="hours">00</div>
+            <div>:</div>
+            <div id="minutes">00</div>
+            <div>:</div>
+            <div id="seconds">00</div>
+        </div>
 
     </table>
     
 </div>
 <div class="chronometer-actions">
-    <button onclick="play()">play</button>
-    <button onclick="stop()">stop</button>
-    <button onclick="reset()">reset</button>
+    <button onclick="chronometer.play()">play</button>
+    <button onclick="chronometer.stop()">stop</button>
+    <button onclick="chronometer.reset()">reset</button>
 </div>
 </body>
