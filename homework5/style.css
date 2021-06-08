@@ -1,0 +1,21 @@
+.raspuns {
+    width: 150px;
+    padding: 10px;
+    margin: 10px;
+}
+
+h1 {
+    color: darkslategray;
+}
+
+h2 {
+    color: deeppink;
+}
+
+.true {
+    color: green;
+}
+
+.false {
+    color: red;
+}
