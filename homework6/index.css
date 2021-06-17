@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#app-container {
+  width: 780px;
+  height: 439px;
+  border: 1px solid black;
+  margin-top: 20px;
+  z-index: 2;
+  margin-left: 20px;
+  position: relative;
+  opacity: 0.7;
+}
+
+#main-container {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+#video-input {
+  display: none;
+}
+
+#canvas-output {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border: 1px solid;
+  z-index: 1;
+}
+#finger-counter {
+  width: 300px;
+  height: 300px;
+  font-size: xx-large;
+  padding-left: 100px;
+  padding-top: 100px;
+  background-color: aliceblue;
+}
+
+.gesture-classifier-btn {
+  border: 1px dashed;
+  width: 100px;
+  padding: 10px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+#gesture-0 {
+  border-color: red;
+}
+
+#gesture-1 {
+  border-color: green;
+}
+
+#gesture-2 {
+  border-color: blue;
+}
+
+.gesture-classifier-btn.training {
+  border: 1px solid;
+}
+
+.gesture-classifier-btn.predicted {
+  background-color: lightpink;
+}
+
+.gesture-cell {
+  width: 20px;
+}
+
+.gesture-0 {
+  background-color: red;
+}
+
+.gesture-1 {
+  background-color: green;
+}
+
+.gesture-2 {
+  background-color: blue;
+}
